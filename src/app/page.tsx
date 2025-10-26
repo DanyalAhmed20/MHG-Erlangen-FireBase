@@ -30,7 +30,7 @@ export default function Home() {
              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-xl -z-10"/>
              <div className="p-8">
                 <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl">
-                Welcome to Nour Hub
+                Welcome to MHG Erlangen
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl">
                 Your center for community, faith, and growth.

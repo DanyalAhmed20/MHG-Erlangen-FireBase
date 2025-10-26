@@ -10,11 +10,11 @@ import { cn } from '@/lib/utils';
 
 const content = {
   en: {
-    title: 'About Nour Hub',
+    title: 'About MHG Erlangen',
     subtitle: 'Fostering a vibrant community rooted in faith, knowledge, and service.',
     missionTitle: 'Our Mission',
     missionText:
-      'Nour Hub is dedicated to creating a supportive and enriching environment for Muslim students. We aim to foster spiritual growth, academic excellence, and community engagement through a variety of programs and events that are both meaningful and enjoyable.',
+      'MHG Erlangen is dedicated to creating a supportive and enriching environment for Muslim students. We aim to foster spiritual growth, academic excellence, and community engagement through a variety of programs and events that are both meaningful and enjoyable.',
     valuesTitle: 'Our Values',
     values: [
       {
@@ -42,11 +42,11 @@ const content = {
     ],
   },
   ar: {
-    title: 'عن مركز نور',
+    title: 'عن MHG Erlangen',
     subtitle: 'تنمية مجتمع نابض بالحياة متجذر في الإيمان والمعرفة والخدمة.',
     missionTitle: 'مهمتنا',
     missionText:
-      'يكرس مركز نور جهوده لخلق بيئة داعمة ومثرية للطلاب المسلمين. نهدف إلى تعزيز النمو الروحي والتفوق الأكاديمي والمشاركة المجتمعية من خلال مجموعة متنوعة من البرامج والفعاليات الهادفة والممتعة.',
+      'يكرس MHG Erlangen جهوده لخلق بيئة داعمة ومثرية للطلاب المسلمين. نهدف إلى تعزيز النمو الروحي والتفوق الأكاديمي والمشاركة المجتمعية من خلال مجموعة متنوعة من البرامج والفعاليات الهادفة والممتعة.',
     valuesTitle: 'قيمنا',
     values: [
       {

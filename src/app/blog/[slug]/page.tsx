@@ -8,7 +8,7 @@ const posts: Record<string, { title: string; imageId: string; content: React.Rea
         imageId: 'blog-post-1',
         content: (
             <>
-                <p className="lead">In an era of digital connection, what does it truly mean to be part of a community? For us at Nour Hub, it's about more than just shared space; it's about shared values, mutual support, and growing together in faith.</p>
+                <p className="lead">In an era of digital connection, what does it truly mean to be part of a community? For us at MHG Erlangen, it's about more than just shared space; it's about shared values, mutual support, and growing together in faith.</p>
                 <p>Building a community is an active, ongoing process. It requires intention, effort, and a commitment from every member to contribute to a culture of inclusivity and respect. Here are some thoughts on the pillars of a strong, faith-based community:</p>
                 
                 <h3>Shared Worship and Spirituality</h3>
@@ -26,7 +26,7 @@ const posts: Record<string, { title: string; imageId: string; content: React.Rea
                 
                 <blockquote>"The believer's shade on the Day of Resurrection will be his charity." - Al-Tirmidhi</blockquote>
                 
-                <p>Ultimately, a community is a living entity. It thrives when its members are engaged, supportive, and committed to a shared vision. At Nour Hub, we strive to be that home away from home—a place of nourishment for the soul, mind, and heart.</p>
+                <p>Ultimately, a community is a living entity. It thrives when its members are engaged, supportive, and committed to a shared vision. At MHG Erlangen, we strive to be that home away from home—a place of nourishment for the soul, mind, and heart.</p>
             </>
         )
     },
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
   return {
-    title: `${post.title} - Nour Hub Blog`,
+    title: `${post.title} - MHG Erlangen Blog`,
   };
 }
 

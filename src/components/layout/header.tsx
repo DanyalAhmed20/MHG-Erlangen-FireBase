@@ -27,7 +27,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">Nour Hub</span>
+            <span className="font-bold font-headline">MHG Erlangen</span>
           </Link>
         </div>
 
@@ -63,7 +63,7 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Logo className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">Nour Hub</span>
+                    <span className="font-bold font-headline">MHG Erlangen</span>
                   </Link>
                 </div>
                 <nav className="flex flex-col gap-4 px-4">

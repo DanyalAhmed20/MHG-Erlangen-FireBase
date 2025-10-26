@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
             <Logo className="h-8 w-8 text-primary" />
-            <span className="ml-3 font-headline text-xl font-bold">Nour Hub</span>
+            <span className="ml-3 font-headline text-xl font-bold">MHG Erlangen</span>
           </div>
           <div className="flex space-x-6">
             <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Nour Hub. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MHG Erlangen. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
-  title: 'Events - Nour Hub',
+  title: 'Events - MHG Erlangen',
   description: 'Stay up to date with all our upcoming events, workshops, and community gatherings.',
 };
 

@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Nour Hub - Muslim Student Organization',
+  title: 'MHG Erlangen - Muslim Student Organization',
   description: 'A welcoming community for Muslim students. Explore our events, mission, and get involved.',
 };
 

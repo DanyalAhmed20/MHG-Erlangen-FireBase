@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export const metadata = {
-  title: 'Blog - Nour Hub',
-  description: 'Reflections, stories, and updates from the Nour Hub community.',
+  title: 'Blog - MHG Erlangen',
+  description: 'Reflections, stories, and updates from the MHG Erlangen community.',
 };
 
 const samplePosts = [
@@ -32,7 +32,7 @@ export default function BlogPage() {
           Our Blog
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Reflections, stories, and updates from the Nour Hub community. Coming soon!
+          Reflections, stories, and updates from the MHG Erlangen community. Coming soon!
         </p>
       </header>
       
