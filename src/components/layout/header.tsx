@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -72,9 +72,8 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Globe className="h-5 w-5" />
-                <span className="sr-only">Change language</span>
+              <Button variant="ghost" className="w-12">
+                {lang.toUpperCase()}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
