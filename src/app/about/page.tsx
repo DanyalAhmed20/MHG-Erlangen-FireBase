@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Handshake, Heart, Lightbulb } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLang } from '@/context/language-context';
 
 const content = {
   en: {
@@ -39,6 +40,38 @@ const content = {
       { id: '1', name: 'Ahmed Khan', role: 'President', imageId: 'team-member-1' },
       { id: '2', name: 'Fatima Al-Sayed', role: 'Vice President', imageId: 'team-member-2' },
       { id: '3', name: 'Yusuf Ahmed', role: 'Treasurer', imageId: 'team-member-3' },
+    ],
+  },
+  de: {
+    title: 'Über MHG Erlangen',
+    subtitle: 'Förderung einer lebendigen Gemeinschaft, die in Glaube, Wissen und Dienst verwurzelt ist.',
+    missionTitle: 'Unsere Mission',
+    missionText:
+      'Die MHG Erlangen setzt sich dafür ein, ein unterstützendes und bereicherndes Umfeld für muslimische Studierende zu schaffen. Unser Ziel ist es, spirituelles Wachstum, akademische Exzellenz und gesellschaftliches Engagement durch eine Vielzahl von sinnvollen und unterhaltsamen Programmen und Veranstaltungen zu fördern.',
+    valuesTitle: 'Unsere Werte',
+    values: [
+      {
+        icon: Lightbulb,
+        title: 'Wissen',
+        text: 'Förderung des islamischen und säkularen Lernens als Eckpfeiler der persönlichen und gemeinschaftlichen Entwicklung.',
+      },
+      {
+        icon: Handshake,
+        title: 'Gemeinschaft',
+        text: 'Aufbau starker brüderlicher und schwesterlicher Bindungen in einer inklusiven und einladenden Atmosphäre.',
+      },
+      {
+        icon: Heart,
+        title: 'Dienst',
+        text: 'Einen Geist des Dienstes und des Beitrags sowohl für den Campus als auch für die breitere Gemeinschaft zu vermitteln.',
+      },
+    ],
+    teamTitle: 'Lernen Sie das Team kennen',
+    teamSubtitle: 'Die engagierten Personen, die unsere Gemeinschaft leiten.',
+    team: [
+      { id: '1', name: 'Ahmed Khan', role: 'Präsident', imageId: 'team-member-1' },
+      { id: '2', name: 'Fatima Al-Sayed', role: 'Vizepräsidentin', imageId: 'team-member-2' },
+      { id: '3', name: 'Yusuf Ahmed', role: 'Schatzmeister', imageId: 'team-member-3' },
     ],
   },
   ar: {
@@ -76,33 +109,12 @@ const content = {
 };
 
 export default function AboutPage() {
-  const [lang, setLang] = useState<'en' | 'ar'>('en');
+  const { lang } = useLang();
   const pageContent = content[lang];
   const missionImage = PlaceHolderImages.find((img) => img.id === 'about-mission');
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="flex justify-end mb-8">
-        <div className="flex items-center space-x-2 rounded-lg bg-secondary p-1">
-          <Button
-            variant={lang === 'en' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setLang('en')}
-            className={cn('transition-all', lang === 'en' && 'bg-background shadow text-primary')}
-          >
-            English
-          </Button>
-          <Button
-            variant={lang === 'ar' ? 'default' : 'ghost'}
-            size="sm"
-            onClick={() => setLang('ar')}
-            className={cn('transition-all', lang === 'ar' && 'bg-background shadow text-primary')}
-          >
-            العربية
-          </Button>
-        </div>
-      </div>
-
       <header className="text-center mb-16" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
           {pageContent.title}

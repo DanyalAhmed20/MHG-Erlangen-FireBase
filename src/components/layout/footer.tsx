@@ -1,12 +1,29 @@
+'use client';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '../icons';
+import { useLang } from '@/context/language-context';
+
+const content = {
+  en: {
+    rights: 'All Rights Reserved.',
+  },
+  de: {
+    rights: 'Alle Rechte vorbehalten.',
+  },
+  ar: {
+    rights: 'كل الحقوق محفوظة.',
+  }
+};
 
 export function Footer() {
+  const { lang } = useLang();
+  const pageContent = content[lang];
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto py-12 px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           <div className="flex items-center mb-6 md:mb-0">
             <Logo className="h-8 w-8 text-primary" />
             <span className="ml-3 font-headline text-xl font-bold">MHG Erlangen</span>
@@ -23,8 +40,8 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} MHG Erlangen. All Rights Reserved.</p>
+        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+          <p>&copy; {new Date().getFullYear()} MHG Erlangen. {pageContent.rights}</p>
         </div>
       </div>
     </footer>

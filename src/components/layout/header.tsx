@@ -3,23 +3,46 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Logo } from '@/components/icons';
 import { cn } from '@/lib/utils';
+import { useLang, Lang } from '@/context/language-context';
 
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Us' },
-  { href: '/events', label: 'Events' },
-  { href: '/blog', label: 'Blog' },
-];
+const navItems = {
+  en: [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About Us' },
+    { href: '/events', label: 'Events' },
+    { href: '/blog', label: 'Blog' },
+  ],
+  de: [
+    { href: '/', label: 'Startseite' },
+    { href: '/about', label: 'Über uns' },
+    { href: '/events', label: 'Veranstaltungen' },
+    { href: '/blog', label: 'Blog' },
+  ],
+  ar: [
+    { href: '/', label: 'الرئيسية' },
+    { href: '/about', label: 'من نحن' },
+    { href: '/events', label: 'الفعاليات' },
+    { href: '/blog', label: 'المدونة' },
+  ],
+};
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLang();
+  const currentNavItems = navItems[lang];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -32,7 +55,7 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex flex-1 items-center space-x-6 text-sm font-medium">
-          {navItems.map((item) => (
+          {currentNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -46,7 +69,21 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Globe className="h-5 w-5" />
+                <span className="sr-only">Change language</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLang(Lang.EN)}>English</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLang(Lang.DE)}>Deutsch</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLang(Lang.AR)}>العربية</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -67,7 +104,7 @@ export function Header() {
                   </Link>
                 </div>
                 <nav className="flex flex-col gap-4 px-4">
-                  {navItems.map((item) => (
+                  {currentNavItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

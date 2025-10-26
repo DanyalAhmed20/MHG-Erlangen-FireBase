@@ -1,25 +1,46 @@
+'use client';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { events } from '@/lib/events-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLang } from '@/context/language-context';
 
-export const metadata = {
-  title: 'Events - MHG Erlangen',
-  description: 'Stay up to date with all our upcoming events, workshops, and community gatherings.',
+const content = {
+  en: {
+    title: 'Our Events',
+    subtitle: 'Join us for our upcoming events. We have something for everyone!',
+    requestToJoin: 'Request to Join',
+    dateLocale: 'en-US',
+  },
+  de: {
+    title: 'Unsere Veranstaltungen',
+    subtitle: 'Nehmen Sie an unseren bevorstehenden Veranstaltungen teil. Wir haben für jeden etwas dabei!',
+    requestToJoin: 'Beitrittsanfrage',
+    dateLocale: 'de-DE',
+  },
+  ar: {
+    title: 'فعالياتنا',
+    subtitle: 'انضم إلينا في فعالياتنا القادمة. لدينا شيء للجميع!',
+    requestToJoin: 'طلب الانضمام',
+    dateLocale: 'ar-EG',
+  },
 };
 
 export default function EventsPage() {
+  const { lang } = useLang();
+  const pageContent = content[lang];
+
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 py-16">
             <header className="text-center mb-12">
                 <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-                    Our Events
+                    {pageContent.title}
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Join us for our upcoming events. We have something for everyone!
+                    {pageContent.subtitle}
                 </p>
             </header>
 
@@ -47,7 +68,7 @@ export default function EventsPage() {
                                 <div className="space-y-2 text-muted-foreground mb-4">
                                     <div className="flex items-center">
                                         <Calendar className="mr-2 h-4 w-4 text-primary" />
-                                        <span>{new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                                        <span>{new Date(event.date).toLocaleDateString(pageContent.dateLocale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
                                     </div>
                                     <div className="flex items-center">
                                         <Clock className="mr-2 h-4 w-4 text-primary" />
@@ -60,7 +81,7 @@ export default function EventsPage() {
                                 </div>
                                 <CardDescription className="flex-grow">{event.description}</CardDescription>
                                 <Button className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
-                                    Request to Join
+                                    {pageContent.requestToJoin}
                                 </Button>
                             </CardContent>
                         </Card>

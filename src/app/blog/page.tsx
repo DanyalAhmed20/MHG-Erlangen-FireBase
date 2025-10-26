@@ -1,12 +1,30 @@
+'use client';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useLang } from '@/context/language-context';
 
-export const metadata = {
-  title: 'Blog - MHG Erlangen',
-  description: 'Reflections, stories, and updates from the MHG Erlangen community.',
+const content = {
+  en: {
+    title: 'Our Blog',
+    subtitle: 'Reflections, stories, and updates from the MHG Erlangen community. Coming soon!',
+    samplePosts: 'Sample Posts',
+    readMore: 'Read More',
+  },
+  de: {
+    title: 'Unser Blog',
+    subtitle: 'Reflexionen, Geschichten und Neuigkeiten aus der MHG Erlangen Community. Demnächst!',
+    samplePosts: 'Beispielbeiträge',
+    readMore: 'Weiterlesen',
+  },
+  ar: {
+    title: 'مدونتنا',
+    subtitle: 'تأملات وقصص وتحديثات من مجتمع MHG Erlangen. قريبا!',
+    samplePosts: 'مشاركات نموذجية',
+    readMore: 'اقرأ المزيد',
+  },
 };
 
 const samplePosts = [
@@ -25,19 +43,22 @@ const samplePosts = [
 ]
 
 export default function BlogPage() {
+  const { lang } = useLang();
+  const pageContent = content[lang];
+
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <header className="text-center mb-12">
         <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-          Our Blog
+          {pageContent.title}
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Reflections, stories, and updates from the MHG Erlangen community. Coming soon!
+          {pageContent.subtitle}
         </p>
       </header>
       
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-headline font-semibold mb-8 text-center">Sample Posts</h2>
+        <h2 className="text-2xl font-headline font-semibold mb-8 text-center">{pageContent.samplePosts}</h2>
          <div className="grid gap-8">
             {samplePosts.map((post) => {
                 const postImage = PlaceHolderImages.find(img => img.id === post.imageId)
@@ -62,7 +83,7 @@ export default function BlogPage() {
                                 <CardContent>
                                     <CardDescription>{post.excerpt}</CardDescription>
                                     <div className="flex items-center mt-4 text-primary font-semibold text-sm">
-                                        Read More <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+                                        {pageContent.readMore} <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </CardContent>
                             </div>
