@@ -5,6 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { LanguageProvider } from '@/context/language-context';
+import { PageTransition } from '@/components/layout/page-transition';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'MHG Erlangen - Muslim Student Organization',
@@ -28,6 +30,9 @@ export default function RootLayout({
       </head>
       <body className={cn('min-h-screen bg-background font-body text-foreground antialiased')}>
         <LanguageProvider>
+          <Suspense>
+            <PageTransition />
+          </Suspense>
           <div className="relative flex min-h-dvh flex-col">
             <Header />
             <main className="flex-1">{children}</main>
