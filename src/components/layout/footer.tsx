@@ -1,5 +1,5 @@
 'use client';
-import { Facebook, Twitter, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '../icons';
 import { useLang } from '@/context/language-context';
@@ -29,12 +29,6 @@ export function Footer() {
             <span className="ml-3 font-headline text-xl font-bold">MHG Erlangen</span>
           </div>
           <div className="flex space-x-6">
-            <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter className="h-6 w-6" />
-            </Link>
             <Link href="https://www.instagram.com/mhgerlangen/" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
               <Instagram className="h-6 w-6" />
             </Link>
