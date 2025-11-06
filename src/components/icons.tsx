@@ -7,33 +7,58 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
     fill="currentColor"
     {...props}
   >
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M50 100C22.386 100 0 77.614 0 50S22.386 0 50 0s50 22.386 50 50-22.386 50-50 50zM8.5 50c0 22.912 18.588 41.5 41.5 41.5S91.5 72.912 91.5 50 72.912 8.5 50 8.5 8.5 27.088 8.5 50z"
-    />
-    <path
-      d="M26.2 38.25V36.5h47.6v1.75H26.2z"
-    />
-    <path
-      d="M49.999 28c-3.593.023-6.936 1.492-9.333 4.083-1.143 1.235-1.921 2.8-2.16 4.417h22.986c-.239-1.617-1.017-3.182-2.16-4.417C56.935 29.492 53.592 28.023 50 28h-.001z"
-    />
-    <path
-      d="M28.028 65.5h6.035V44.38h-6.035v21.12h.001zm10.74 0h6.036V44.38h-6.036v21.12h.001zm16.702-21.12v21.12h6.035V44.38h-6.035v.001zm-5.961 0v21.12h6.035V44.38h-6.035v.001z"
-    />
-    <defs>
-        <path
-            id="circleText"
-            d="M 15, 50 a 35,35 0 1,1 70,0"
-        />
-    </defs>
-    <text style={{ fontSize: '8px', letterSpacing: '.4em', textTransform: 'uppercase' }} fill="currentColor">
-        <textPath href="#circleText">
-            Muslimische Hochschulgruppe
-        </textPath>
+    <style>
+      {`
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@500&display=swap');
+      .heavy-sans { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+      .light-sans { font-family: 'Roboto', sans-serif; font-weight: 500; }
+    `}
+    </style>
+    {/* Outer circle */}
+    <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" strokeWidth="2.5" />
+    {/* Inner circle */}
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="1" />
+
+    {/* MHG Text */}
+    <text
+      x="50"
+      y="63"
+      textAnchor="middle"
+      className="heavy-sans"
+      fontSize="24"
+      fill="currentColor"
+    >
+      MHG
     </text>
-     <text x="50" y="80" textAnchor="middle" style={{ fontSize: '7px', letterSpacing: '.2em', textTransform: 'uppercase' }} fill="currentColor">
-      Erlangen
+
+    {/* Mosque Dome */}
+    <path
+      d="M 35 48 L 65 48 L 65 46 C 65 42, 62 40, 58 40 L 55 40 C 55 37, 52.5 35, 50 35 C 47.5 35, 45 37, 45 40 L 42 40 C 38 40, 35 42, 35 46 Z"
+      fill="currentColor"
+    />
+
+    <defs>
+      <path
+        id="circleTextTop"
+        d="M 12 50 A 38 38 0 0 1 88 50"
+        fill="none"
+      />
+      <path
+        id="circleTextBottom"
+        d="M 88 50 A 38 38 0 0 1 12 50"
+        fill="none"
+      />
+    </defs>
+
+    <text className="light-sans" fontSize="6.5" letterSpacing="0.2em" fill="currentColor">
+      <textPath href="#circleTextTop" startOffset="50%" textAnchor="middle">
+        MUSLIMISCHE HOCHSCHULGRUPPE
+      </textPath>
+    </text>
+    <text className="light-sans" fontSize="6.5" letterSpacing="0.4em" fill="currentColor">
+      <textPath href="#circleTextBottom" startOffset="50%" textAnchor="middle">
+        ERLANGEN
+      </textPath>
     </text>
   </svg>
 );
