@@ -52,8 +52,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">MHG Erlangen</span>
+            <Logo className="h-10 w-10 text-primary-foreground" />
           </Link>
         </div>
 
@@ -101,8 +100,7 @@ export function Header() {
                     className="flex items-center space-x-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Logo className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">MHG Erlangen</span>
+                    <Logo className="h-10 w-10 text-primary" />
                   </Link>
                 </div>
                 <nav className="flex flex-col gap-4 px-4">
