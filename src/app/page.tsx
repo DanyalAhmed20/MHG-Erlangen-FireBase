@@ -93,13 +93,13 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center text-center">
-          <div className="relative max-w-4xl px-4 text-primary-foreground drop-shadow-md">
+          <div className="relative max-w-4xl px-4 text-foreground drop-shadow-md">
              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-xl -z-10"/>
              <div className="p-8">
                 <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl">
                 {pageContent.welcome}
                 </h1>
-                <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl">
+                <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-primary-foreground">
                 {pageContent.tagline}
                 </p>
                 <div className="mt-8 flex justify-center gap-4">

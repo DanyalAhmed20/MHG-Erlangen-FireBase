@@ -95,7 +95,7 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <header className="text-center mb-16" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-        <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary-foreground">
+        <h1 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
           {pageContent.title}
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">

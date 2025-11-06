@@ -63,7 +63,7 @@ export function Header() {
               href={item.href}
               className={cn(
                 'transition-colors hover:text-primary',
-                pathname === item.href ? 'text-primary-foreground' : 'text-muted-foreground'
+                pathname === item.href ? 'text-foreground' : 'text-muted-foreground'
               )}
             >
               {item.label}
@@ -111,7 +111,7 @@ export function Header() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
                         'text-lg font-medium transition-colors hover:text-primary',
-                        pathname === item.href ? 'text-primary-foreground' : 'text-muted-foreground'
+                        pathname === item.href ? 'text-foreground' : 'text-muted-foreground'
                       )}
                     >
                       {item.label}
