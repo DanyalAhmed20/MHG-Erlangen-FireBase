@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
@@ -7,6 +8,7 @@ import { Footer } from '@/components/layout/footer';
 import { LanguageProvider } from '@/context/language-context';
 import { PageTransition } from '@/components/layout/page-transition';
 import { Suspense } from 'react';
+import { VideoBackground } from '@/components/layout/video-background';
 
 export const metadata: Metadata = {
   title: 'MHG Erlangen - Muslim Student Organization',
@@ -30,6 +32,7 @@ export default function RootLayout({
       </head>
       <body className={cn('min-h-screen bg-background font-body text-foreground antialiased')}>
         <LanguageProvider>
+          <VideoBackground />
           <Suspense>
             <PageTransition />
           </Suspense>
