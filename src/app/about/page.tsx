@@ -34,13 +34,6 @@ const content = {
         text: 'Instilling a spirit of service and contribution to both the campus and the wider community.',
       },
     ],
-    teamTitle: 'Meet the Team',
-    teamSubtitle: 'The dedicated individuals leading our community.',
-    team: [
-      { id: '1', name: 'Ahmed Khan', role: 'President', imageId: 'team-member-1' },
-      { id: '2', name: 'Fatima Al-Sayed', role: 'Vice President', imageId: 'team-member-2' },
-      { id: '3', name: 'Yusuf Ahmed', role: 'Treasurer', imageId: 'team-member-3' },
-    ],
   },
   de: {
     title: 'Über MHG Erlangen',
@@ -66,13 +59,6 @@ const content = {
         text: 'Einen Geist des Dienstes und des Beitrags sowohl für den Campus als auch für die breitere Gemeinschaft zu vermitteln.',
       },
     ],
-    teamTitle: 'Lernen Sie das Team kennen',
-    teamSubtitle: 'Die engagierten Personen, die unsere Gemeinschaft leiten.',
-    team: [
-      { id: '1', name: 'Ahmed Khan', role: 'Präsident', imageId: 'team-member-1' },
-      { id: '2', name: 'Fatima Al-Sayed', role: 'Vizepräsidentin', imageId: 'team-member-2' },
-      { id: '3', name: 'Yusuf Ahmed', role: 'Schatzmeister', imageId: 'team-member-3' },
-    ],
   },
   ar: {
     title: 'عن MHG Erlangen',
@@ -97,13 +83,6 @@ const content = {
         title: 'الخدمة',
         text: 'غرس روح الخدمة والمساهمة في الحرم الجامعي والمجتمع الأوسع.',
       },
-    ],
-    teamTitle: 'تعرف على الفريق',
-    teamSubtitle: 'الأفراد المتفانون الذين يقودون مجتمعنا.',
-    team: [
-      { id: '1', name: 'أحمد خان', role: 'الرئيس', imageId: 'team-member-1' },
-      { id: '2', name: 'فاطمة السيد', role: 'نائب الرئيس', imageId: 'team-member-2' },
-      { id: '3', name: 'يوسف أحمد', role: 'أمين الصندوق', imageId: 'team-member-3' },
     ],
   },
 };
@@ -165,35 +144,6 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           ))}
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl font-bold">{pageContent.teamTitle}</h2>
-          <p className="mt-2 text-lg text-muted-foreground">{pageContent.teamSubtitle}</p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          {pageContent.team.map((member) => {
-            const memberImage = PlaceHolderImages.find((img) => img.id === member.imageId);
-            return (
-              <div key={member.id} className="text-center flex flex-col items-center">
-                {memberImage && (
-                  <Image
-                    src={memberImage.imageUrl}
-                    alt={member.name}
-                    width={150}
-                    height={150}
-                    className="rounded-full shadow-md mb-4 object-cover"
-                    data-ai-hint={memberImage.imageHint}
-                  />
-                )}
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-primary font-medium">{member.role}</p>
-              </div>
-            );
-          })}
         </div>
       </section>
     </div>
