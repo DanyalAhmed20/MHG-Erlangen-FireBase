@@ -23,18 +23,21 @@ const navItems = {
     { href: '/about', label: 'About Us' },
     { href: '/events', label: 'Events' },
     { href: '/blog', label: 'Blog' },
+    { href: '/prayer-rooms', label: 'Prayer Rooms' },
   ],
   de: [
     { href: '/', label: 'Startseite' },
     { href: '/about', label: 'Über uns' },
     { href: '/events', label: 'Veranstaltungen' },
     { href: '/blog', label: 'Blog' },
+    { href: '/prayer-rooms', label: 'Gebetsräume' },
   ],
   ar: [
     { href: '/', label: 'الرئيسية' },
     { href: '/about', label: 'من نحن' },
     { href: '/events', label: 'الفعاليات' },
     { href: '/blog', label: 'المدونة' },
+    { href: '/prayer-rooms', label: 'غرف الصلاة' },
   ],
 };
 
