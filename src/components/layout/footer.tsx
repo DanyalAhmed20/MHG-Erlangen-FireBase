@@ -21,7 +21,7 @@ export function Footer() {
   const pageContent = content[lang];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-background/80 backdrop-blur-sm text-secondary-foreground">
       <div className="container mx-auto py-12 px-4">
         <div className="flex flex-col md:flex-row justify-between items-center" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           <div className="flex items-center mb-6 md:mb-0">

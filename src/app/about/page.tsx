@@ -95,7 +95,7 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <header className="text-center mb-16" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-        <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
+        <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary-foreground">
           {pageContent.title}
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -132,7 +132,7 @@ export default function AboutPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {pageContent.values.map((value) => (
-            <Card key={value.title} className="text-center bg-card">
+            <Card key={value.title} className="text-center bg-card/50">
               <CardHeader>
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                   <value.icon className="h-8 w-8" />

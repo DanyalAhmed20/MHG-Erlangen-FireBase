@@ -119,7 +119,7 @@ export default function PrayerRoomsPage() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16">
         <header className="text-center mb-12" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
+          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary-foreground">
             {pageContent.title}
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -129,7 +129,7 @@ export default function PrayerRoomsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           {sortedLocations.map((location, index) => (
-            <Card key={index} className={cn("overflow-hidden", { 'bg-secondary': location.isUnofficial })}>
+            <Card key={index} className={cn("overflow-hidden bg-card/50", { 'bg-card/20': location.isUnofficial })}>
               <CardHeader>
                 <CardTitle className="font-headline text-2xl flex items-center">
                   <MapPin className="mr-3 h-6 w-6 text-primary" />

@@ -49,7 +49,7 @@ export default function BlogPage() {
   return (
     <div className="container mx-auto px-4 py-16" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <header className="text-center mb-12">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
+        <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary-foreground">
           {pageContent.title}
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -64,7 +64,7 @@ export default function BlogPage() {
                 const postImage = PlaceHolderImages.find(img => img.id === post.imageId)
                 return (
                     <Link href={`/blog/${post.slug}`} key={post.slug}>
-                        <Card className="group flex flex-col md:flex-row overflow-hidden transition-all duration-300 hover:shadow-xl hover:bg-secondary">
+                        <Card className="group flex flex-col md:flex-row overflow-hidden transition-all duration-300 hover:shadow-xl hover:bg-secondary bg-card/50">
                              {postImage && (
                                 <div className="md:w-1/3 aspect-video md:aspect-auto relative">
                                     <Image 

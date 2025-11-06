@@ -33,10 +33,10 @@ export default function EventsPage() {
   const pageContent = content[lang];
 
   return (
-    <div className="bg-secondary" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="bg-background/80 backdrop-blur-sm" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
         <div className="container mx-auto px-4 py-16">
             <header className="text-center mb-12">
-                <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
+                <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary-foreground">
                     {pageContent.title}
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -48,7 +48,7 @@ export default function EventsPage() {
                 {events.map((event) => {
                     const eventImage = PlaceHolderImages.find((img) => img.id === event.image);
                     return (
-                        <Card key={event.id} className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <Card key={event.id} className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl bg-card/50">
                              <CardHeader className="p-0">
                                 {eventImage && (
                                 <div className="aspect-video relative">

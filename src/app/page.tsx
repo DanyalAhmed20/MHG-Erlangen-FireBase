@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Upcoming Events Section */}
-      <section className="bg-secondary py-16 md:py-24">
+      <section className="bg-background/80 backdrop-blur-sm py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl font-bold md:text-4xl">{pageContent.upcomingEventsTitle}</h2>
@@ -163,7 +163,7 @@ export default function Home() {
             {upcomingEvents.map((event) => {
               const eventImage = PlaceHolderImages.find((img) => img.id === event.image);
               return (
-                <Card key={event.id} className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <Card key={event.id} className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl bg-card/50">
                   <CardHeader className="p-0">
                     {eventImage && (
                        <div className="aspect-video relative">
