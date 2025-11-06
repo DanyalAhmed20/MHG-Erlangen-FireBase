@@ -1,7 +1,7 @@
 'use client';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
-import { Logo } from '../icons';
+import Image from 'next/image';
 import { useLang } from '@/context/language-context';
 
 const content = {
@@ -25,7 +25,7 @@ export function Footer() {
       <div className="container mx-auto py-12 px-4">
         <div className="flex flex-col md:flex-row justify-between items-center" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           <div className="flex items-center mb-6 md:mb-0">
-            <Logo className="h-10 w-10 text-primary-foreground" />
+            <Image src="/logo.png" alt="MHG Erlangen Logo" width={40} height={40} />
             <span className="ml-3 font-headline text-xl font-bold">MHG Erlangen</span>
           </div>
           <div className="flex space-x-6">

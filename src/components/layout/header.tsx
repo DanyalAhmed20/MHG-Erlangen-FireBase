@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -13,7 +14,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Logo } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { useLang, Lang } from '@/context/language-context';
 
@@ -52,7 +52,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-10 w-10 text-primary-foreground" />
+            <Image src="/logo.png" alt="MHG Erlangen Logo" width={40} height={40} />
           </Link>
         </div>
 
@@ -100,7 +100,7 @@ export function Header() {
                     className="flex items-center space-x-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Logo className="h-10 w-10 text-primary" />
+                    <Image src="/logo.png" alt="MHG Erlangen Logo" width={40} height={40} />
                   </Link>
                 </div>
                 <nav className="flex flex-col gap-4 px-4">
