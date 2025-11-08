@@ -11,7 +11,7 @@ import { useLang } from '@/context/language-context';
 const content = {
   en: {
     welcome: 'Welcome to MHG Erlangen',
-    tagline: 'Your center for community, faith, and growth.',
+    tagline: ['Your center for community, faith, and growth.'],
     upcomingEvents: 'Upcoming Events',
     aboutUs: 'About Us',
     ourMission: 'Our Mission',
@@ -91,6 +91,15 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
+        <div className="absolute inset-0 flex items-center justify-center -z-0">
+          <Image
+            src="/logo.png"
+            alt="MHG Erlangen Logo Watermark"
+            width={700} 
+            height={700}
+            className="opacity-50 pointer-events-none" 
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="relative max-w-4xl px-4 text-foreground drop-shadow-md">
