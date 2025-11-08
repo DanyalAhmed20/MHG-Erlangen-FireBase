@@ -32,6 +32,7 @@ const navItems = {
     { href: '/events', label: 'Veranstaltungen' },
     { href: '/blog', label: 'Blog' },
     { href: '/prayer-rooms', label: 'Gebetsräume' },
+    { href: '/prayer-schedule', label: 'Gebetsplan' },
   ],
   ar: [
     { href: '/', label: 'الرئيسية' },
@@ -39,6 +40,7 @@ const navItems = {
     { href: '/events', label: 'الفعاليات' },
     { href: '/blog', label: 'المدونة' },
     { href: '/prayer-rooms', label: 'غرف الصلاة' },
+    { href: '/prayer-schedule', label: 'جدول الصلاة' },
   ],
 };
 

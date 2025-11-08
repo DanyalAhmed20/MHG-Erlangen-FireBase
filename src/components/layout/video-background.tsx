@@ -9,7 +9,7 @@ export function VideoBackground() {
   // - loop=1 (makes the video loop)
   // - playlist=fdt2W3UDCHw (YouTube requires this to make 'loop=1' work on a single video)
   // - start=60 (starts the video at the 60-second mark)
-  const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&start=6`;
+  const videoSrc = `https://www.youtube.com/embed/fdt2W3UDCHw?autoplay=1&mute=1&controls=0&loop=1&start=6`;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">

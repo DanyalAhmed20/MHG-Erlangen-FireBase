@@ -7,11 +7,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { events } from '@/lib/events-data';
 import { useLang } from '@/context/language-context';
+import { TypingEffect } from '@/components/ui/typing-effect';
 
 const content = {
   en: {
     welcome: 'Welcome to MHG Erlangen',
-    tagline: ['Your center for community, faith, and growth.'],
+    tagline: ["Your center for community.", "Your center for faith.", "Your center for growth."],
     upcomingEvents: 'Upcoming Events',
     aboutUs: 'About Us',
     ourMission: 'Our Mission',
@@ -31,7 +32,7 @@ const content = {
   },
   de: {
     welcome: 'Willkommen bei MHG Erlangen',
-    tagline: 'Dein Zentrum für Gemeinschaft, Glaube und Wachstum.',
+    tagline: ["Ihr Zentrum für Gemeinschaft.", "Ihr Zentrum für Glauben.", "Ihr Zentrum für Wachstum."],
     upcomingEvents: 'Nächste Veranstaltungen',
     aboutUs: 'Über uns',
     ourMission: 'Unsere Mission',
@@ -51,7 +52,7 @@ const content = {
   },
   ar: {
     welcome: 'مرحباً بكم في MHG Erlangen',
-    tagline: 'مركزكم للمجتمع والإيمان والنمو.',
+    tagline: ["مركزك للمجتمع.", "مركزك للإيمان.", "مركزك للنمو."],
     upcomingEvents: 'الفعاليات القادمة',
     aboutUs: 'من نحن',
     ourMission: 'مهمتنا',
@@ -109,7 +110,7 @@ export default function Home() {
                 {pageContent.welcome}
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-primary-foreground">
-                {pageContent.tagline}
+                <TypingEffect taglines={pageContent.tagline} />
                 </p>
                 <div className="mt-8 flex justify-center gap-4">
                 <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
