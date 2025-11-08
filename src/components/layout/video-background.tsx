@@ -16,7 +16,6 @@ export function VideoBackground() {
       <iframe
         src={videoSrc}
         title="Video Background"
-        frameBorder="0"
         allow="autoplay; encrypted-media" // Allow autoplay
         className="w-full h-full object-cover pointer-events-none" // 'pointer-events-none' is crucial so you can click things on top of the video
       />
