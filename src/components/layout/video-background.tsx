@@ -1,24 +1,26 @@
-
 'use client';
 
 export function VideoBackground() {
-  // A high-quality, looping, and royalty-free video is essential for good performance and aesthetics.
-  // This is a placeholder; you can replace it with any direct video link.
-  const videoUrl = 'https://firebasestorage.googleapis.com/v0/b/genkit-422806.appspot.com/o/makkah.mp4?alt=media&token=c1933a59-3d71-464a-a436-e137b77054f4';
+  const videoId = 'fdt2W3UDCHw';
+  // URL parameters:
+  // - autoplay=1 (starts the video)
+  // - mute=1 (required for autoplay in most browsers)
+  // - controls=0 (hides the player controls)
+  // - loop=1 (makes the video loop)
+  // - playlist=fdt2W3UDCHw (YouTube requires this to make 'loop=1' work on a single video)
+  // - start=60 (starts the video at the 60-second mark)
+  const videoSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&start=6`;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover"
-        key={videoUrl}
-      >
-        <source src={videoUrl} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <iframe
+        src={videoSrc}
+        title="Video Background"
+        frameBorder="0"
+        allow="autoplay; encrypted-media" // Allow autoplay
+        className="w-full h-full object-cover pointer-events-none" // 'pointer-events-none' is crucial so you can click things on top of the video
+      />
+      {/* This is the dark overlay from your original component. */}
       <div className="absolute inset-0 bg-black/70" />
     </div>
   );
