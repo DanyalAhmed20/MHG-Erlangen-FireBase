@@ -24,6 +24,7 @@ const navItems = {
     { href: '/events', label: 'Events' },
     { href: '/blog', label: 'Blog' },
     { href: '/prayer-rooms', label: 'Prayer Rooms' },
+    { href: '/prayer-schedule', label: 'Prayer Schedule' },
   ],
   de: [
     { href: '/', label: 'Startseite' },
