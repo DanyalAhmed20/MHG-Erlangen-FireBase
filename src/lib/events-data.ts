@@ -6,6 +6,7 @@ export type Event = {
   location: string;
   description: string;
   image: string;
+  link: string;
 };
 
 export const events: Event[] = [
@@ -17,6 +18,7 @@ export const events: Event[] = [
     location: 'University Main Hall',
     description: 'Join us for the general meeting to discuss upcoming plans and activities for MHG Erlangen.',
     image: 'event-1',
+    link: 'https://luma.com/hq350sj3',
   },
   {
     id: '2',
@@ -26,6 +28,7 @@ export const events: Event[] = [
     location: 'Student Hub, Room 5',
     description: 'Enhance your public speaking skills in this interactive workshop. All levels are welcome.',
     image: 'event-2',
+    link: 'https://luma.com/hq350sj3',
   },
   {
     id: '3',
@@ -35,6 +38,7 @@ export const events: Event[] = [
     location: 'University Sports Center',
     description: 'Join us for an evening of friendly competition and fun. We will be playing various group sports.',
     image: 'event-3',
+    link: 'https://luma.com/hq350sj3',
   },
   {
     id: '4',
@@ -44,6 +48,7 @@ export const events: Event[] = [
     location: 'Lecture Hall C',
     description: 'An insightful lecture on a topical issue. More details to follow soon.',
     image: 'event-4',
+    link: 'https://luma.com/hq350sj3',
   },
   {
     id: '5',
@@ -53,5 +58,6 @@ export const events: Event[] = [
     location: 'Campus Cafe',
     description: 'A casual get-together to relax and chat over a warm cup of tea. A great way to meet new people.',
     image: 'event-2',
+    link: 'https://luma.com/hq350sj3',
   },
 ];

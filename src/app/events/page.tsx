@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { events } from '@/lib/events-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -80,8 +81,10 @@ export default function EventsPage() {
                                     </div>
                                 </div>
                                 <CardDescription className="flex-grow">{event.description}</CardDescription>
-                                <Button className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
-                                    {pageContent.requestToJoin}
+                                <Button
+                                    asChild
+                                    className="w-full mt-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+                                    <Link href={event.link}>{pageContent.requestToJoin}</Link>
                                 </Button>
                             </CardContent>
                         </Card>
