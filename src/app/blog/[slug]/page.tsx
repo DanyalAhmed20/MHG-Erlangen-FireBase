@@ -56,8 +56,9 @@ const posts: Record<string, { title: string; imageId: string; content: React.Rea
     }
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
+export async function generateMetadata({ params: paramsPromise }: { params: { slug: string } }) {
+  const params = await paramsPromise; // Await the params
+  const post = posts[params.slug];    // Now this is safe
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -69,8 +70,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-    const post = posts[params.slug];
+export default async function BlogPostPage({ params: paramsPromise }: { params: { slug: string } }) {
+    const params = await paramsPromise; // Await the params
+    const post = posts[params.slug];    // Now this is safe
 
     if (!post) {
         notFound();
