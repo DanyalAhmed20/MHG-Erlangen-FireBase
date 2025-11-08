@@ -12,7 +12,7 @@ import { Suspense } from 'react';
 import { VideoBackground } from '@/components/layout/video-background';
 
 export const metadata: Metadata = {
-  title: 'MHG Erlangen - Muslim Student Organization',
+  title: 'MHG Erlangen',
   description: 'A welcoming community for Muslim students. Explore our events, mission, and get involved.',
 };
 
