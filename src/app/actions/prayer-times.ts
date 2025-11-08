@@ -7,9 +7,9 @@ import {
   getYear, getMonth, getDate as dfnsGetDate, getHours, getMinutes, getSeconds
 } from 'date-fns';
 import { toZonedTime, formatInTimeZone } from 'date-fns-tz'; // Explicit named imports
-import * as cheerio from 'cheerio';
-import type { Browser as PuppeteerBrowser } from 'puppeteer-core';
-import type { Browser as PuppeteerCoreBrowser } from 'puppeteer-core';
+// import * as cheerio from 'cheerio';
+// import type { Browser as PuppeteerBrowser } from 'puppeteer';
+// import type { Browser as PuppeteerCoreBrowser } from 'puppeteer-core';
 
 const berlinTimeZone = 'Europe/Berlin';
 
@@ -299,12 +299,19 @@ export async function getPrayerTimes(): Promise<PrayerTimesData> {
   console.log(`[PTIMES] serverTimeBerlinAsUTC (after toZonedTime): ${serverTimeBerlinAsUTC.toISOString()}`);
   console.log(`[PTIMES] serverTimeBerlinAsUTC formatted for Berlin: ${formatInTimeZone(serverTimeBerlinAsUTC, berlinTimeZone, 'yyyy-MM-dd HH:mm:ss XXX')} (Note: formatInTimeZone re-interprets based on its UTC value)`);
 
-  let browser: PuppeteerBrowser | PuppeteerCoreBrowser | undefined;
+  
   let htmlContent: string;
+  const CACHE_KEY = 'prayer_times_data';
   const BROWSERLESS_TOKEN = process.env.BROWSERLESS_TOKEN;
   const IS_VERCEL_PRODUCTION = process.env.VERCEL_ENV === 'production';
+  const cheerio = await import('cheerio');
+  const puppeteerCore = await import('puppeteer-core');
 
+  // Dynamically define the browser type *inside* the function
+  type PuppeteerBrowser = import('puppeteer-core').Browser;
+  let browser: PuppeteerBrowser | undefined;
   try {
+    // const cachedData = await kv.get<PrayerTimesData>(CACHE_KEY);
     if (BROWSERLESS_TOKEN) {
       console.log("Using Browserless.io for Puppeteer connection.");
       const puppeteerCore = await import('puppeteer-core');
@@ -313,8 +320,7 @@ export async function getPrayerTimes(): Promise<PrayerTimesData> {
       console.log("Connected to Browserless.io instance.");
     } else if (!IS_VERCEL_PRODUCTION) {
       console.log("Local development: No Browserless token. Using local Puppeteer.");
-      const puppeteer = await import('puppeteer-core');
-      browser = await puppeteer.launch({
+      browser = await puppeteerCore.launch({ // Use puppeteerCore
         headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
         ignoreHTTPSErrors: true,

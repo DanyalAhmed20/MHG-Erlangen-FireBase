@@ -53,7 +53,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="MHG Erlangen Logo" width={40} height={40} />
+            <Image src="/logo.png" alt="MHG Erlangen Logo" width={50} height={50} />
           </Link>
         </div>
 
