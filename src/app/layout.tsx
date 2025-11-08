@@ -6,6 +6,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { LanguageProvider } from '@/context/language-context';
+import { AppProviders } from './prayer-schedule/app-providers'; 
 import { PageTransition } from '@/components/layout/page-transition';
 import { Suspense } from 'react';
 import { VideoBackground } from '@/components/layout/video-background';
@@ -46,7 +47,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={cn('min-h-screen bg-background font-body text-foreground antialiased')}>
+      <body className={cn('min-h-screen font-body text-foreground antialiased')}>
+        <AppProviders>
         <LanguageProvider>
           <VideoBackground />
           <Suspense>
@@ -59,6 +61,7 @@ export default function RootLayout({
           </div>
           <Toaster />
         </LanguageProvider>
+        </AppProviders>
       </body>
     </html>
   );
