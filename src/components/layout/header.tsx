@@ -25,6 +25,7 @@ const navItems = {
     { href: '/blog', label: 'Blog' },
     { href: '/prayer-rooms', label: 'Prayer Rooms' },
     { href: '/prayer-schedule', label: 'Prayer Schedule' },
+    { href: '/feedback', label: 'Feedback' },
   ],
   de: [
     { href: '/', label: 'Startseite' },
@@ -33,6 +34,7 @@ const navItems = {
     { href: '/blog', label: 'Blog' },
     { href: '/prayer-rooms', label: 'Gebetsräume' },
     { href: '/prayer-schedule', label: 'Gebetsplan' },
+    { href: '/feedback', label: 'Feedback' },
   ],
   ar: [
     { href: '/', label: 'الرئيسية' },
@@ -41,6 +43,7 @@ const navItems = {
     { href: '/blog', label: 'المدونة' },
     { href: '/prayer-rooms', label: 'غرف الصلاة' },
     { href: '/prayer-schedule', label: 'جدول الصلاة' },
+    { href: '/feedback', label: 'ملاحظات' },
   ],
 };
 
@@ -75,6 +78,11 @@ export function Header() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <Button asChild variant="ghost" className="rounded-full">
+            <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe_BVRcVLKj92VTWc1OL_f6TSDT02puj26t0aCroy7X3XlbDQ/viewform?usp=send_form" target="Google form" rel="noopener noreferrer">
+              Become a member
+            </a>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="w-12">
