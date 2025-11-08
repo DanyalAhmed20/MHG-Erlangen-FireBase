@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 interface TypingEffectProps {
   /** A list of strings to type out. */
   taglines: string[];
-  /** Optional className to apply to the <p> tag. */
+  /** Optional className to apply to the root <span> tag. */
   className?: string;
   /** Speed in ms for typing one character. Default: 100ms */
   typeSpeed?: number;
@@ -19,6 +19,7 @@ interface TypingEffectProps {
 /**
  * A component that displays a list of strings with a "typewriter" effect.
  * It finds the common prefix between strings and only types/deletes the differences.
+ * Renders as a <span>, so it can be safely nested inside other text elements.
  */
 export function TypingEffect({
   taglines,
@@ -37,10 +38,11 @@ export function TypingEffect({
   // Guard for empty or undefined taglines
   if (!taglines || taglines.length === 0) {
     return (
-      <p className={cn("font-body text-lg md:text-xl", className)}>
+      // Root element is a <span>
+      <span className={cn("inline-block", className)}>
         <span className="min-h-[1.5em] inline-block">{'\u00A0'}</span>
         <span className="inline-block w-[2px] h-[1.2em] bg-current opacity-100 animate-blink translate-y-1 ml-1" />
-      </p>
+      </span>
     );
   }
 
@@ -123,8 +125,8 @@ export function TypingEffect({
   }, [displayedText, isDeleting, taglineIndex, taglines, typeSpeed, deleteSpeed, pauseDuration]);
 
   return (
-    // The rest of your JSX remains the same
-    <p className={cn("font-body text-lg md:text-xl", className)}>
+    // Root element is a <span>
+    <span className={cn("inline-block", className)}>
       {/* We add a non-breaking space as a placeholder 
           to prevent layout shift when the text is empty */}
       <span className="min-h-[1.5em] inline-block">
@@ -132,6 +134,6 @@ export function TypingEffect({
       </span>
       {/* Blinking cursor effect */}
       <span className="inline-block w-[2px] h-[1.2em] bg-current opacity-100 animate-blink translate-y-1 ml-1" />
-    </p>
+    </span>
   );
 }
