@@ -8,7 +8,7 @@ import {
 } from 'date-fns';
 import { toZonedTime, formatInTimeZone } from 'date-fns-tz'; // Explicit named imports
 import * as cheerio from 'cheerio';
-import type { Browser as PuppeteerBrowser } from 'puppeteer';
+import type { Browser as PuppeteerBrowser } from 'puppeteer-core';
 import type { Browser as PuppeteerCoreBrowser } from 'puppeteer-core';
 
 const berlinTimeZone = 'Europe/Berlin';
@@ -313,7 +313,7 @@ export async function getPrayerTimes(): Promise<PrayerTimesData> {
       console.log("Connected to Browserless.io instance.");
     } else if (!IS_VERCEL_PRODUCTION) {
       console.log("Local development: No Browserless token. Using local Puppeteer.");
-      const puppeteer = await import('puppeteer');
+      const puppeteer = await import('puppeteer-core');
       browser = await puppeteer.launch({
         headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
