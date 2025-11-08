@@ -6,8 +6,10 @@
 @layer base {
   /* Light Theme (default) */
   :root {
-    --background: 0 0% 98%; /* Off-white */
-    --foreground: 240 10% 3.9%; /* Dark Gray for text */
+    --background: 196 49% 32%;
+    --foreground: 0 0% 95%;
+    /* --background: 0 0% 98%; /* Off-white */
+    /* --foreground: 240 10% 3.9%; Dark Gray for text */
     --card: 0 0% 100%; /* White */
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -47,8 +49,10 @@
 
   /* Dark Theme */
   .dark {
-    --background: 212 19% 14%; /* Original Dark Navy Blue */
-    --foreground: 0 0% 95%; /* Original Light Gray/Off-white */
+    --background: 196 49% 32%;
+    --foreground: 0 0% 95%;
+    /* --background: 212 19% 14%; Original Dark Navy Blue */
+    /* --foreground: 0 0% 95%; Original Light Gray/Off-white */
     --card: 210 25% 19%; /* Original Slightly Lighter Navy Blue for status box */
     --card-foreground: 0 0% 95%;
     --popover: 210 25% 19%;
